@@ -15,7 +15,6 @@ export const App = () => {
   return (
     <div
       style={{
-        height: '100vh',
         display: 'flex',
         flexWrap: 'nowrap',
         justifyContent: 'center',
@@ -23,6 +22,7 @@ export const App = () => {
         fontSize: 40,
         color: '#010101',
         flexDirection: 'column',
+        margin: "30px"
       }}
     >
       <h1>Phonebook</h1>
