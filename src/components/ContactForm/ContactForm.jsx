@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContactAction } from 'redux/PhoneBookRedux/phonebookSlice';
+import { setContactsData } from 'redux/PhoneBookRedux/operathion';
 
 
 export const ContactForm = () => {
     const [name, setName] = useState("");
   const [number, setNumber] = useState("");
 
-  const contacts = useSelector(state=> state.phonebook.contacts)
+  const contacts = useSelector(state=> state.phonebook.items)
   const dispatch = useDispatch();
   const onSubmit = (event) =>{
     event.preventDefault();
@@ -22,7 +22,7 @@ export const ContactForm = () => {
     if (contacts.some(contact => contact.name === name)) {
       return alert(`${name} is already in contacts`);
     }
-    dispatch(addContactAction({ name, number, id: nanoid() }));
+    dispatch(setContactsData({ name, number, id: nanoid() }));
   }
 
   const handleChengeName = event => {

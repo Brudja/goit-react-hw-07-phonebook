@@ -1,9 +1,16 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getContactsData } from 'redux/PhoneBookRedux/operathion';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 
-
 export const App = () => {
+
+ const dispatch =  useDispatch()
+  useEffect(()=>{
+    dispatch(getContactsData())
+  },[dispatch])
 
   return (
     <div
