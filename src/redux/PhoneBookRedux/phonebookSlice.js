@@ -9,7 +9,7 @@ const Status = {
 
 const initialState = {
   items: [],
-  Status: init,
+  status: Status.init,
   error: null,
 };
 
